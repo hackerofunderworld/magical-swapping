@@ -13,6 +13,7 @@ void copy (vector<int> arr, vector<int> &arr_temp, int num);
 
 int main()
 {
+    //кодировка UTF-8
     srand(time(0));
     vector<int> arr;
     int num=10000;                          //Количество элементов в массиве
@@ -41,7 +42,7 @@ int main()
     sort_hoar(arr_temp, 0, num-1);
     int t_hoar=time_hoar.elapsed();
 //    show(arr_temp, num);
-    cout<<"Hoar sorting time: "<<t_bubble<<endl;
+    cout<<"Hoar sorting time: "<<t_hoar<<endl;
 
     copy(arr, arr_temp, num);
     QTime time_merge;
@@ -67,7 +68,7 @@ void sort_bubble (vector<int> &arr, int num)        //Сортировка пу�
     for (int i=0; i<num-1; i++)
         for (int j=0; j<num-i-1; j++)
             if (arr[j]>arr[j+1])
-                    swap(arr[i], arr[i+1]);
+                    swap(arr[j], arr[j+1]);
 }
 
 void sort_hoar(vector<int> &arr, int left, int right)       //Сортировка Хоар
